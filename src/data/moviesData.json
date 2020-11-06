@@ -1,0 +1,84 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Bohemian Rhapsody",
+      "category": "New Releases",
+      "year": 2019,
+      "contentRating": "16+",
+      "duration": 164,
+      "imgSrc": "../assets/thumbnails/bohemian-rhapsody.jpg",
+      "description": "Vestibulum ac est lacinia nisi venenatis tristique"
+    }, 
+    {
+      "id": 2,
+      "title": "Venom",
+      "category": "Trends",
+      "year": 2018,
+      "contentRating": "18+",
+      "duration": 165,
+      "imgSrc": "../assets/thumbnails/venom.jpg",
+      "description": "Vestibulum ac est lacinia nisi venenatis tristique"
+    },
+    {
+      "id": 3,
+      "title": "Avengers Infinity War",
+      "category": "Trends",
+      "year": 2019,
+      "contentRating": "16+",
+      "duration": 184,
+      "imgSrc": "../assets/thumbnails/avengers-infinity-war.png",
+      "description": "Vestibulum ac est lacinia nisi venenatis tristique"
+    },
+    {
+      "id": 4,
+      "title": "First Man",
+      "category": "Recommendations",
+      "year": 2009,
+      "contentRating": "16+",
+      "duration": 164,
+      "imgSrc": "../assets/thumbnails/first-man.jpg",
+      "description": "Vestibulum ac est lacinia nisi venenatis tristique"
+    },
+    {
+      "id": 5,
+      "title": "Han Solo",
+      "category": "My Favorites",
+      "year": 2015,
+      "contentRating": "13+",
+      "duration": 139,
+      "imgSrc": "../assets/thumbnails/han-solo.jpg",
+      "description": "Vestibulum ac est lacinia nisi venenatis tristique"
+    },
+    {
+      "id": 6,
+      "title": "Incredibles",
+      "category": "Most Popular",
+      "year": 2009,
+      "contentRating": "12+",
+      "duration": 145,
+      "imgSrc": "../assets/thumbnails/incredibles.jpg",
+      "description": "Vestibulum ac est lacinia nisi venenatis tristique"
+    },
+    {
+      "id": 7,
+      "title": "Jurassic World",
+      "category": "Recommendations",
+      "year": 2016,
+      "contentRating": "17+",
+      "duration": 164,
+      "imgSrc": "../assets/thumbnails/jurassic-world.jpg",
+      "description": "Vestibulum ac est lacinia nisi venenatis tristique"
+    },
+    {
+      "id": 8,
+      "title": "Deadpool",
+      "category": "Trends",
+      "year": 2018,
+      "contentRating": "18+",
+      "duration": 167,
+      "imgSrc": "../assets/thumbnails/deadpool.png",
+      "description": "Vestibulum ac est lacinia nisi venenatis tristique"
+    }
+  ]
+}
