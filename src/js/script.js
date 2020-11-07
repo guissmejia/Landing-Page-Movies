@@ -7,41 +7,78 @@ let slideItem = document.querySelectorAll(".Slide__card");
 let counter = 1;
 
 let sizeItem = slideItem[0].clientWidth;
-console.log(sizeItem)
 
 let interval = 3500;
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   let sizeItem = slideItem[0].clientWidth;
-})
+});
 
 setInterval(() => {
-  slide()
-}, interval)
+  slide();
+}, interval);
 
+const slide = () => {
+  slideList.style.transform = "translate(" + -sizeItem * counter + "px)";
+  slideList.style.transition = "all .8s";
 
-const slide = () => { 
+  counter++;
 
-slideList.style.transform = "translate("+(-sizeItem*counter)+"px)";
-slideList.style.transition = "all .8s"
-
-  counter ++; 
-
-  if(counter == slideItem.length){
+  if (counter == slideItem.length) {
     setTimeout(() => {
-      slideList.style.transform = "translate(0px)"
-      slideList.style.transition = "all .5s"
-      counter = 1
-    }, interval)
+      slideList.style.transform = "translate(0px)";
+      slideList.style.transition = "all .5s";
+      counter = 1;
+    }, interval);
   }
-}
+};
 
-// Fetch to load data
+// Fetch to load movies data
 
-const moviesDataUrl = './data/moviesData.json'
+const moviesDataUrl = "./data/moviesData.json";
 
 fetch(moviesDataUrl)
-.then(response => response.json())
-.then(response => {
-  console.log(response)
-})
+  .then((response) => response.json())
+  .then((response) => {
+    //console.log(response.data);
+    if (response.data.length > 0) {
+      for (i = 0; i < response.data.length; i++) {
+        let moviesData = document.createElement("li");
+        let movieInfo = document.createElement("div");
+        let movieTitle = document.createElement("h1");
+        let movieImage = document.createElement("img");
+        let movieYear = document.createElement("p");
+        let movieContentRating = document.createElement("p");
+        let watchNowButton = document.createElement("button");
+        let moreInfoButton = document.createElement("button");
+
+        moviesData.setAttribute("class", "Movie--item");
+        moviesData.setAttribute(
+          "data-category",
+          `${response.data[i].category}`
+        );
+        movieTitle.innerHTML = response.data[i].title;
+        movieImage.src = response.data[i].imgSrc;
+        movieYear.innerHTML = response.data[i].year;
+        movieContentRating.innerHTML = response.data[i].contentRating;
+        watchNowButton.innerHTML = "Watch Now";
+        moreInfoButton.innerHTML = "More Info";
+
+        movieInfo.classList.add("Movie--info");
+        watchNowButton.classList.add("button--primary");
+        moreInfoButton.classList.add("button--secondary");
+
+        moviesData.appendChild(movieInfo);
+        moviesData.appendChild(movieImage);
+        movieInfo.appendChild(movieTitle);
+        movieInfo.appendChild(movieYear);
+        movieInfo.appendChild(movieContentRating);
+        movieInfo.appendChild(watchNowButton);
+        movieInfo.appendChild(moreInfoButton);
+
+        const movieDataItem = document.getElementById("Movies__list--items");
+
+        movieDataItem.appendChild(moviesData);
+      }
+    }
+  });
