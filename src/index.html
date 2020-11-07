@@ -3,15 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Movies</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+    rel="stylesheet"
     />
     <link href="./styles/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Hi!</h1>
+    <header class="Header">
+      <div class="Header--logo">
+        <a href="/">
+          <img src="./assets/logo.png"  alt="Movies Logo"/>
+        </a>
+      </div>
+      <nav class="Header__nav">
+        <ul>
+          <li>
+            <a href="#!">Home</a>
+          </li>
+          <li>
+            <a href="#!">Categories</a>
+          </li>
+          <li>
+            <a href="#!">My Favorites</a>
+          </li>
+          <li>
+            <a href="#!" class="Header__nav--sign-in">Sign In</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="Slide">
+      <div class="Slide__items">
+        <ul class="Slide--list">
+          <li class="Slide__card">
+            <div class="Slide__info">
+              <h1>Aquaman</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <button class="Slide__info--button--primary">Watch Now</button>
+              <button class="Slide__info--button--secondary">More Info</button>
+            </div>
+            <img src="./assets/banners/banner-aquaman.jpg" alt="Aquaman" />
+          </li>
+          <li class="Slide__card">
+            <div class="Slide__info">
+              <h1>Bumblee</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <button class="Slide__info--button--primary">Watch Now</button>
+              <button class="Slide__info--button--secondary">More Info</button>
+            </div>
+            <img src="./assets/banners/banner-bumblebee.jpg" alt="Bumblee" />
+          </li>
+          <li class="Slide__card">
+            <div class="Slide__info">
+              <h1>Venom</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <button class="Slide__info--button--primary">Watch Now</button>
+              <button class="Slide__info--button--secondary">More Info</button>
+            </div>
+            <img src="./assets/banners/banner-venom.png" alt="Venom" />
+          </li>
+        </ul>
+      </div>
+    </section>
     <script src="./js/script.js"></script>
   </body>
-</html>
+  </html>
+  
