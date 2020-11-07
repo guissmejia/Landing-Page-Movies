@@ -8,6 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
     <link href="./styles/styles.css" rel="stylesheet" />
   </head>
   <body>
@@ -18,20 +22,30 @@
         </a>
       </div>
       <nav class="Header__nav">
-        <ul>
-          <li>
-            <a href="#!">Home</a>
-          </li>
-          <li>
-            <a href="#categories">Categories</a>
-          </li>
-          <li>
-            <a href="#categories">My Favorites</a>
-          </li>
-          <li>
-            <a href="#!" class="Header__nav--sign-in">Sign In</a>
-          </li>
-        </ul>
+        <label class="Header__nav--label" for="toggle"
+          ><i class="fas fa-bars"></i>
+        </label>
+        <input type="checkbox" id="toggle" />
+        <div class="Header__nav--options">
+          <ul>
+            <li>
+              <a href="#!">Home</a>
+            </li>
+            <li>
+              <a href="#!">Categories</a>
+            </li>
+            <li>
+              <a href="#!">My Favorites</a>
+            </li>
+            <li>
+              <a href="#!" class="Header__nav--sign-in">Sign In</a>
+            </li>
+            <button class="Header__switch" id="switch">
+              <span><i class="fas fa-sun"></i></span>
+              <span><i class="fas fa-moon"></i></span>
+            </button>
+          </ul>
+        </div>
       </nav>
     </header>
     <section class="Slide">
@@ -49,7 +63,13 @@
               <button class="button--primary">Watch Now</button>
               <button class="button--secondary">More Info</button>
             </div>
-            <img src="./assets/banners/banner-aquaman.jpg" alt="Aquaman" />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="./assets/banners/banner-aquaman-mob.jpg"
+              />
+              <img src="./assets/banners/banner-aquaman.jpg" alt="Aquaman" />
+            </picture>
           </li>
           <li class="Slide__card">
             <div class="Slide__info">
@@ -63,7 +83,13 @@
               <button class="button--primary">Watch Now</button>
               <button class="button--secondary">More Info</button>
             </div>
-            <img src="./assets/banners/banner-bumblebee.jpg" alt="Bumblee" />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="./assets/banners/banner-bumblebee-mob.jpg"
+              />
+              <img src="./assets/banners/banner-bumblebee.jpg" alt="Bumblee" />
+            </picture>
           </li>
           <li class="Slide__card">
             <div class="Slide__info">
@@ -77,19 +103,24 @@
               <button class="button--primary">Watch Now</button>
               <button class="button--secondary">More Info</button>
             </div>
-            <img src="./assets/banners/banner-venom.png" alt="Venom" />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="./assets/banners/banner-venom-mob.png"
+              />
+              <img src="./assets/banners/banner-venom.png" alt="Venom" />
+            </picture>
           </li>
         </ul>
       </div>
     </section>
-    <section class="Movies" id="categories">
-
-      <input type="radio" id="ALL" name="categories" value="ALL" checked>
-      <input type="radio" id="NR" name="categories" value="NR">
-      <input type="radio" id="MP" name="categories" value="MP">
-      <input type="radio" id="T" name="categories" value="T">
-      <input type="radio" id="MF" name="categories" value="MF">
-      <input type="radio" id="R" name="categories" value="R">
+    <section class="Movies">
+      <input type="radio" id="ALL" name="categories" value="ALL" checked />
+      <input type="radio" id="NR" name="categories" value="NR" />
+      <input type="radio" id="MP" name="categories" value="MP" />
+      <input type="radio" id="T" name="categories" value="T" />
+      <input type="radio" id="MF" name="categories" value="MF" />
+      <input type="radio" id="R" name="categories" value="R" />
 
       <div class="Movies__categories">
         <label for="ALL">All</label>
@@ -99,29 +130,7 @@
         <label for="MF">My Favorites</label>
         <label for="R">Recommendations</label>
       </div>
-      <!-- <ul class="Movies__nav">
-        <li>
-          <a href="#!" class="Movies__categories" data-category="ALL">All</a>
-        </li>
-        <li>
-          <a href="#!" class="Movies__categories" data-category="NR">New Releases</a>
-        </li>
-        <li>
-          <a href="#!" class="Movies__categories" data-category="MP">Most Popular</a>
-        </li>
-        <li>
-          <a href="#!" class="Movies__categories" data-category="T">Trends</a>
-        </li>
-        <li>
-          <a href="#!" class="Movies__categories" data-category="MF">My Favorites</a>
-        </li>
-        <li>
-          <a href="#!" class="Movies__categories" data-category="R">Recommendations</a>
-        </li>
-      </ul> -->
-      <div class="Movies__list">
-        <ul id="Movies__list--items" class="Movies__list--items"></ul>
-      </div>
+      <ul class="Movies__list--items" id="Movies__list--items"></ul>
     </section>
     <script src="./js/script.js"></script>
   </body>
