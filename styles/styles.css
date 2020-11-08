@@ -271,7 +271,6 @@ body.Dark .Movies__categories label {
     display: flex;
     width: 100%;
     justify-content: flex-end;
-    padding: 0 2em 0 0;
     position: absolute;
     z-index: 99;
   }
@@ -351,7 +350,11 @@ body.Dark .Movies__categories label {
     transform: translate(10%, 30%);
   }
 
-  .Movies__list--items {
-    grid-template-columns: 100%;
+  .Movies__list--items li:hover .Movie--info p {
+    margin: 0.5em 0;
+  }
+
+  .button--primary, .button--secondary {
+    margin: 0.5em 0;
   }
 }
