@@ -79,13 +79,14 @@ body.Dark .Movies__categories label {
   font-size: 18px;
 }
 .Header__nav ul .Header__switch {
-  background: #343058;
+  background: #3f3f41;
   border-radius: 1em;
   border: none;
   position: relative;
   cursor: pointer;
   display: flex;
   outline: 0;
+  margin: 3em auto;
 }
 .Header__nav ul .Header__switch::after {
   content: "";
@@ -312,9 +313,6 @@ body.Dark .Movies__categories label {
     font-size: 20px;
     font-weight: 500;
   }
-  .Header__nav #toggle:checked + .Header__nav--options ul .Header__switch {
-    display: none;
-  }
   #toggle:checked + .Header__nav--label {
     color: #fff;
   }
@@ -347,6 +345,9 @@ body.Dark .Movies__categories label {
     transform: translate(10%, 30%);
   }
 
+  .Movies__list--items li:hover .Movie--info .button--secondary {
+    display: none;
+  }
   .Movies__list--items li:hover .Movie--info p {
     margin: 0.5em 0;
   }
