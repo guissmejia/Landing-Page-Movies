@@ -326,9 +326,6 @@ body.Dark .Movies__categories label {
     flex-direction: column;
     transform: translate(10%, 65%);
   }
-  .Slide__items ul li .Slide__info .button--primary {
-    margin-left: 1em;
-  }
 
   .Movies__categories {
     flex-direction: column;

@@ -8,13 +8,11 @@ const imageGallery = () => {
   let counter = 1;
 
   let sizeItem = slideItem[0].clientWidth;
-  console.log(sizeItem)
 
   let interval = 3500;
 
   window.addEventListener("resize", () => {
     let sizeItem = slideItem[0].clientWidth;
-    console.log(sizeItem)
   });
 
   setInterval(() => {
