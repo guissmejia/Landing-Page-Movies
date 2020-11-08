@@ -33,6 +33,18 @@ textarea {
   outline: 0;
 }
 
+body.Dark {
+  background: #000000db;
+}
+
+body.Dark .Header__nav ul li a {
+  color: #fff;
+}
+
+body.Dark .Movies__categories label {
+  color: #fff;
+}
+
 .Header {
   padding: 1em;
   height: auto;
@@ -147,7 +159,7 @@ textarea {
 
 .button--primary {
   padding: 1em;
-  background: yellow;
+  background: #d8d818;
   color: #000;
   border: none;
 }
@@ -161,9 +173,11 @@ textarea {
 
 .button--primary,
 .button--secondary {
+  margin: 1em;
   text-transform: uppercase;
   width: auto;
-  margin: 1em;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .Movies {
@@ -183,6 +197,7 @@ textarea {
   font-weight: 500;
   font-size: 20px;
   border-radius: 0.3em;
+  cursor: pointer;
 }
 .Movies__list {
   margin: 2em 0;
@@ -248,18 +263,6 @@ textarea {
   display: none;
 }
 
-body.Dark {
-  background: #000000db;
-}
-
-body.Dark .Header__nav ul li a {
-  color: #fff;
-}
-
-body.Dark .Movies__categories label {
-  color: #fff;
-}
-
 @media screen and (max-width: 768px) {
   .Header__nav {
     position: relative;
@@ -275,7 +278,7 @@ body.Dark .Movies__categories label {
   .Header__nav--label i {
     font-size: 2em;
     padding: 0 0.5em 0 0;
-    color: #15884a;
+    color: #d8d818;
   }
   .Header__nav--sign-in {
     background: transparent;
@@ -303,7 +306,7 @@ body.Dark .Movies__categories label {
   }
   .Header__nav #toggle:checked + .Header__nav--options ul li {
     padding: 1em 0;
-    border-bottom: 1px solid #1c7043;
+    border-bottom: 1px solid #a2a289;
   }
   .Header__nav #toggle:checked + .Header__nav--options ul li a {
     color: #fff;
@@ -328,6 +331,10 @@ body.Dark .Movies__categories label {
     margin-left: 1em;
   }
 
+  .Movies__categories {
+    flex-direction: column;
+  }
+
   .Movies__list--items {
     grid-template-columns: repeat(2, 45%);
   }
@@ -340,10 +347,11 @@ body.Dark .Movies__categories label {
     width: 100%;
   }
 
-  .Movies__list {
-    margin: 1em 0;
+  .Slide__items ul li .Slide__info {
+    transform: translate(10%, 30%);
   }
-  .Movies__list .Movies__list--items {
+
+  .Movies__list--items {
     grid-template-columns: 100%;
   }
 }

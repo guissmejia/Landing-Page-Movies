@@ -1,40 +1,45 @@
-//Slide
+//The container of each slide and the individual slide are instantiated, in turn, a variable is created that will save the width of each item for its movement, which will be executed in intervals of 3.5 seconds
 
-let slideList = document.querySelector(".Slide--list");
+const imageGallery = () => {
+  let slideList = document.querySelector(".Slide--list");
 
-let slideItem = document.querySelectorAll(".Slide__card");
+  let slideItem = document.querySelectorAll(".Slide__card");
 
-let counter = 1;
+  let counter = 1;
 
-let sizeItem = slideItem[0].clientWidth;
-
-let interval = 3500;
-
-window.addEventListener("resize", () => {
   let sizeItem = slideItem[0].clientWidth;
-});
 
-setInterval(() => {
-  slide();
-}, interval);
+  let interval = 3500;
 
-const slide = () => {
-  slideList.style.transform = "translate(" + -sizeItem * counter + "px)";
-  slideList.style.transition = "all .8s";
+  window.addEventListener("resize", () => {
+    let sizeItem = slideItem[0].clientWidth;
+  });
 
-  counter++;
+  setInterval(() => {
+    slide();
+  }, interval);
 
-  if (counter == slideItem.length) {
-    setTimeout(() => {
-      slideList.style.transform = "translate(0px)";
-      slideList.style.transition = "all .5s";
-      counter = 1;
-    }, interval);
-  }
+  const slide = () => {
+    slideList.style.transform = "translate(" + -sizeItem * counter + "px)";
+    slideList.style.transition = "all .8s";
+
+    counter++;
+
+    if (counter == slideItem.length) {
+      setTimeout(() => {
+        slideList.style.transform = "translate(0px)";
+        slideList.style.transition = "all .5s";
+        counter = 1;
+      }, interval);
+    }
+  };
 };
 
-const moviesData = () => {
+imageGallery();
 
+//The function that makes the request to a local api is created that will show the user the information of the existing movies
+
+const moviesData = () => {
   const moviesDataUrl = "./data/moviesData.json";
 
   fetch(moviesDataUrl)
@@ -85,24 +90,29 @@ const moviesData = () => {
 
 moviesData();
 
+//A function is implemented that will allow the user to activate a night mode on the site, saving their choice through localStorage
 
-const buttonSwitch = document.querySelector("#switch");
+const darkMode = () => {
+  const buttonSwitch = document.querySelector("#switch");
 
-buttonSwitch.addEventListener("click", () => {
-  document.body.classList.toggle('Dark');
-  buttonSwitch.classList.toggle('Active')
+  buttonSwitch.addEventListener("click", () => {
+    document.body.classList.toggle("Dark");
+    buttonSwitch.classList.toggle("Active");
 
-  if(document.body.classList.contains('Dark')){
-    localStorage.setItem('dark-mode', 'true')
+    if (document.body.classList.contains("Dark")) {
+      localStorage.setItem("dark-mode", "true");
+    } else {
+      localStorage.setItem("dark-mode", "false");
+    }
+  });
+
+  if (localStorage.getItem("dark-mode") === "true") {
+    document.body.classList.add("Dark");
+    buttonSwitch.classList.add("Active");
   } else {
-    localStorage.setItem('dark-mode', 'false')
+    document.body.classList.remove("Dark");
+    buttonSwitch.classList.remove("Active");
   }
-})
+};
 
-if(localStorage.getItem('dark-mode') === 'true'){
-  document.body.classList.add('Dark');
-  buttonSwitch.classList.add('Active')
-} else {
-  document.body.classList.remove('Dark');
-  buttonSwitch.classList.remove('Active')
-}
+darkMode();
