@@ -93,6 +93,8 @@ moviesData();
 //A function is implemented that will allow the user to activate a night mode on the site, saving their choice through localStorage
 
 const darkMode = () => {
+  const mainLogo = document.getElementById("Main--logo");
+  mainLogo.setAttribute("src", "./assets/logo.png");
   const buttonSwitch = document.querySelector("#switch");
 
   buttonSwitch.addEventListener("click", () => {
@@ -101,14 +103,17 @@ const darkMode = () => {
 
     if (document.body.classList.contains("Dark")) {
       localStorage.setItem("dark-mode", "true");
+      mainLogo.setAttribute("src", "./assets/logo-white.png");
     } else {
       localStorage.setItem("dark-mode", "false");
+      mainLogo.setAttribute("src", "./assets/logo.png");
     }
   });
-
+  
   if (localStorage.getItem("dark-mode") === "true") {
     document.body.classList.add("Dark");
     buttonSwitch.classList.add("Active");
+    
   } else {
     document.body.classList.remove("Dark");
     buttonSwitch.classList.remove("Active");
